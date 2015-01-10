@@ -145,7 +145,7 @@ public class Signup extends Activity {
             }
 
             if(fd_pin==1){
-                Intent intent = new Intent(getBaseContext(),MainActivity.class);
+                Intent intent = new Intent(getBaseContext(),login_page.class);
                 startActivity(intent);
 
 
