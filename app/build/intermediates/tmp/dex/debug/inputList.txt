@@ -1,0 +1,4 @@
+C:\Users\gabdulla\Videos\NavigationDrawer1\app\build\intermediates\classes\debug
+C:\Users\gabdulla\Videos\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-b32ea95d12bc00e3a0355ed3b3b514f483c5d145.jar
+C:\Users\gabdulla\Videos\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-68ad3b06aa0da2a39133e528a88e6a14e09656c2.jar
+C:\Users\gabdulla\Videos\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\classes-e37fae4a364b33f373591be9d360a0de003d23b5.jar
