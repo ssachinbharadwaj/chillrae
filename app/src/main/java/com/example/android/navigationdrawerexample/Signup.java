@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.content.Context;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -31,8 +31,8 @@ public class Signup extends Activity {
     private static final String LOGIN_URL = "http://gmohammedabdulla.in/chillrae/signup.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
-
-
+    Context context = getApplicationContext();
+    int duration = Toast.LENGTH_SHORT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,8 +99,18 @@ public class Signup extends Activity {
             String username = uid.getText().toString();
             String password = pass.getText().toString();
             String mobile_number = mnumber.getText().toString();
-            String pin_number = pin.getText().toString();
-
+            if(username==null)
+            {
+                Toast toast = Toast.makeText(context,"Enter your name please", duration);
+                toast.show();
+            }
+            else if (password==null)
+            {
+                Toast toast = Toast.makeText(context,"Enter some password", duration);
+                toast.show();
+            }
+            Intent pinintent= new Intent(getBaseContext(),pin_page.class);
+            startActivity(pinintent);
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("username", username));
             params.add(new BasicNameValuePair("password", password));
@@ -147,7 +157,7 @@ public class Signup extends Activity {
             if(fd_pin==1){
                 Intent intent = new Intent(getBaseContext(),login_page.class);
                 startActivity(intent);
-
+                finish();
 
 
             }

@@ -19,7 +19,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.Context;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -34,24 +36,31 @@ public class login_page extends Activity {
     private EditText uid;
     private EditText pass;
     private ProgressDialog progress;
+    private static final String MyPREFERENCES = "MyPrefs" ;
     // JSON parser class
   //  JSONParser jsonParser = new JSONParser();
     private static final String LOGIN_URL = "http://gmohammedabdulla.in/chillrae/login.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+    private String username;
     private GlobalData gdata;
-
-
+    SharedPreferences sharedpreferences;
+    Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
         //passing global data to all the activities
-
-
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        editor=sharedpreferences.edit();
         uid = (EditText) findViewById(R.id.editText);
         pass = (EditText) findViewById(R.id.editText2);
-
+        if(sharedpreferences.contains("Username"));
+        {
+            Intent intent1 = new Intent(getBaseContext(),MainActivity.class);
+            startActivity(intent1);
+            finish();
+        }
         progress= new ProgressDialog(this);
          gdata = (GlobalData) getApplicationContext();
 
@@ -70,6 +79,7 @@ public class login_page extends Activity {
     public void signup_pressed(View v){
         Intent intent = new Intent(this,Signup.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -115,8 +125,8 @@ public class login_page extends Activity {
         @Override
         protected String doInBackground(Void... urls) {
             int success;
-            String username = uid.getText().toString();
-            String password = pass.getText().toString();
+            username = uid.getText().toString();
+             String password = pass.getText().toString();
 
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("username", username));
@@ -161,8 +171,9 @@ public class login_page extends Activity {
             if(fd_pin==1){
                 Log.d("main","in intent");
                 Intent intent = new Intent(getBaseContext(),MainActivity.class);
+                editor.putString("Username",username);
                 startActivity(intent);
-
+                finish();
             }
         }
     }

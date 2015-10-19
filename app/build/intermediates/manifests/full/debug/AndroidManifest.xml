@@ -57,6 +57,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.webpage"
+            android:label="web" >
+        </activity>
     </application>
 
 </manifest>

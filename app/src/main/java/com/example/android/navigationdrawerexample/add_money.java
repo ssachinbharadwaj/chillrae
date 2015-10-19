@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -18,7 +19,7 @@ public class add_money extends Fragment {
 
     TextView text1;
     GlobalData gdata;
-
+    Button gate;
     private static TextView textview;
 
     @Override
@@ -28,7 +29,7 @@ public class add_money extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add_money,
                 container, false);
         text1=(TextView)view.findViewById(R.id.gdata_add);
-
+        gate=(Button)view.findViewById(R.id.button4);
         gdata=(GlobalData) getActivity().getApplicationContext();
 
 

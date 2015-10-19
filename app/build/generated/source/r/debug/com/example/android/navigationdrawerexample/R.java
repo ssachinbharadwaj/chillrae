@@ -43,34 +43,34 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f0a001d;
         public static final int action_websearch=0x7f0a001c;
-        public static final int amount_rec=0x7f0a0015;
-        public static final int button=0x7f0a000d;
-        public static final int button2=0x7f0a0016;
-        public static final int button3=0x7f0a0017;
+        public static final int amount_rec=0x7f0a0014;
+        public static final int button=0x7f0a000b;
+        public static final int button2=0x7f0a0015;
+        public static final int button3=0x7f0a0016;
+        public static final int button4=0x7f0a000e;
         public static final int content_frame=0x7f0a0001;
         public static final int drawer_layout=0x7f0a0000;
         public static final int editText=0x7f0a0018;
         public static final int editText2=0x7f0a0019;
         public static final int editText4=0x7f0a0007;
         public static final int gdata1=0x7f0a0004;
-        public static final int gdata_abo=0x7f0a000e;
-        public static final int gdata_add=0x7f0a000f;
-        public static final int gdata_rec=0x7f0a0011;
-        public static final int image=0x7f0a0010;
+        public static final int gdata_abo=0x7f0a000c;
+        public static final int gdata_add=0x7f0a000d;
+        public static final int gdata_rec=0x7f0a0010;
+        public static final int image=0x7f0a000f;
         public static final int left_drawer=0x7f0a0002;
         public static final int login=0x7f0a001a;
         public static final int mnumber=0x7f0a0006;
         public static final int password=0x7f0a000a;
-        public static final int pin=0x7f0a000c;
-        public static final int reasons=0x7f0a0013;
+        public static final int reasons=0x7f0a0012;
         public static final int singup=0x7f0a001b;
         public static final int textView=0x7f0a0003;
-        public static final int textView2=0x7f0a0012;
+        public static final int textView2=0x7f0a0011;
         public static final int textView3=0x7f0a0008;
         public static final int textView4=0x7f0a0009;
-        public static final int textView5=0x7f0a000b;
-        public static final int textView6=0x7f0a0014;
+        public static final int textView6=0x7f0a0013;
         public static final int u_id=0x7f0a0005;
+        public static final int webview=0x7f0a0017;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -80,7 +80,9 @@ public final class R {
         public static final int fragment_add_money=0x7f030004;
         public static final int fragment_planet=0x7f030005;
         public static final int fragment_receive=0x7f030006;
-        public static final int login_page=0x7f030007;
+        public static final int gatewaypage=0x7f030007;
+        public static final int login_page=0x7f030008;
+        public static final int pin_page=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f090000;

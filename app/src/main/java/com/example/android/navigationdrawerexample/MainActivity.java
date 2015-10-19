@@ -26,6 +26,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
@@ -83,8 +85,8 @@ public class  MainActivity extends Activity {
     private CharSequence mTitle;
     private String[] mPlanetTitles;
     public GlobalData gdata ;
-
-
+    SharedPreferences shrdpref;
+    Editor editor;
     NfcAdapter adapter;
     PendingIntent pendingIntent;
     IntentFilter writeTagFilters[];
@@ -105,7 +107,7 @@ public class  MainActivity extends Activity {
         mPlanetTitles = getResources().getStringArray(R.array.planets_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
+        editor=shrdpref.edit();
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -228,6 +230,7 @@ public class  MainActivity extends Activity {
             case 3:
                //try {
                     Log.d("switch", "in this case");
+                    editor.remove("Username");
                     Intent intent = new Intent(this, login_page.class);
                     startActivity(intent);
                     break;
